@@ -9,50 +9,58 @@ import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { PageContainer } from '@toolpad/core/PageContainer';
 import Grid from '@mui/material/Grid2';
+import { DndContext } from '@dnd-kit/core';
+import Draggable from '../components/userItem';
+import { SortableContext } from '@dnd-kit/sortable';
 
 const NAVIGATION = [
+ 
   {
-    kind: 'header',
-    title: 'Main items',
-  },
-  {
+    id:1,
     segment: 'dashboard',
     title: 'Dashboard',
-    icon: <DashboardIcon />,
   },
+
   {
-    segment: 'orders',
-    title: 'Orders',
-    icon: <ShoppingCartIcon />,
-  },
-  {
-    kind: 'divider',
-  },
-  {
-    kind: 'header',
-    title: 'Analytics',
-  },
-  {
-    segment: 'reports',
-    title: 'Reports',
-    icon: <BarChartIcon />,
+    id:2,
+    segment: 'Job application',
+    title: 'Job application',
     children: [
       {
-        segment: 'sales',
-        title: 'Sales',
-        icon: <DescriptionIcon />,
+        segment: 'John Doe',
+        title: 'John Doe',
       },
       {
-        segment: 'traffic',
-        title: 'Traffic',
-        icon: <DescriptionIcon />,
+        segment: 'James Bond',
+        title: 'James Bond',
       },
     ],
   },
   {
-    segment: 'integrations',
-    title: 'Integrations',
-    icon: <LayersIcon />,
+    id:3,
+    segment: 'Qualifications',
+    title: 'Qualifications',
+    children: [
+      {
+        segment: 'Java Script',
+        title: 'Java Script',
+      },
+      {
+        segment: 'React',
+        title: 'React',
+      },
+    ],
+  },
+  {
+    id:4,
+    segment: 'About',
+    title: 'About',
+  },
+
+  {
+    id:5,
+    segment: 'Contact',
+    title: 'Contact',
   },
 ];
 

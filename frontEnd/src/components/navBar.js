@@ -82,6 +82,17 @@ const borderStyle = {
   paddingRight: '40px'
 
 };
+
+const IconWithCaption = ({ icon, caption }) => (
+  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <IconButton size="large" aria-label={caption}>
+      {icon}
+    </IconButton>
+    <Typography variant="caption" sx={{ color: 'gray', fontSize: '12px' }}>
+      {caption}
+    </Typography>
+  </Box>
+);
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -259,33 +270,15 @@ export default function NavBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '20px' }}>
             <Box sx={{ ...groupSpacing, ...borderStyle }}>
-              <IconButton size="large" aria-label="show 17 new notifications">
-                <Badge badgeContent={0} color="error">
-                  <HomeIcon sx={commonIconStyle} />
-                </Badge>
-              </IconButton>
-              <IconButton size="large" aria-label="show 17 new notifications">
-                <Badge badgeContent={0} color="error">
-                  <WorkOutlineIcon sx={commonIconStyle} />
-                </Badge>
-              </IconButton>
-              <IconButton size="large" aria-label="show 17 new notifications">
-                <Badge badgeContent={0} color="error">
-                  <PeopleOutlineIcon sx={commonIconStyle} />
-                </Badge>
-              </IconButton>
+            <IconWithCaption icon={<HomeIcon sx={commonIconStyle} />} caption="Home" />
+              <IconWithCaption icon={<WorkOutlineIcon sx={commonIconStyle} />} caption="Work" />
+              <IconWithCaption icon={<PeopleOutlineIcon sx={commonIconStyle} />} caption="People" />
+           
             </Box>
             <Box sx={groupSpacing}>
-              <IconButton size="large" aria-label="show 4 new mails">
-                <Badge badgeContent={4} color="error">
-                  <ChatBubbleOutlineIcon sx={commonIconStyle} />
-                </Badge>
-              </IconButton>
-              <IconButton size="large" aria-label="show 17 new notifications">
-                <Badge badgeContent={17} color="error">
-                  <NotificationsIcon sx={commonIconStyle} />
-                </Badge>
-              </IconButton>
+            <IconWithCaption icon={<ChatBubbleOutlineIcon sx={commonIconStyle} />} caption="Messages" />
+              <IconWithCaption icon={<NotificationsIcon sx={commonIconStyle} />} caption="Notifications" />
+            
             </Box>
             <IconButton
               size="large"
