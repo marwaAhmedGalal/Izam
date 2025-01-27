@@ -1,1 +1,13 @@
 .zColor{color: green}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+.container{
+    padding: 20px;
+}
+
+.cardStyle{
+    
+}

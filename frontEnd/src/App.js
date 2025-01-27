@@ -1,10 +1,9 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavBar from './components/navBar';
+import ItemList from './components/ItemList';
+import MenuList from './components/MenuList';
 import MainPage from './pages/mainPage';
-import { List } from '@mui/material';
-import SideBar from './components/sideBar';
-import UserList from './components/userList';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +11,17 @@ const router = createBrowserRouter([
     element: (
       <>
         <NavBar />
-        <UserList />
+        <MainPage />
+        
+      </>
+    ),
+  },
+  {
+    path: "/item-list", 
+    element: (
+      <>
+        <NavBar />
+        <ItemList /> 
       </>
     ),
   },
