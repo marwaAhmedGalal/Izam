@@ -2,8 +2,9 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavBar from './components/navBar';
 import ItemList from './components/ItemList';
-import MenuList from './components/MenuList';
 import MainPage from './pages/mainPage';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor } from './store/store';
 
 const router = createBrowserRouter([
   {
@@ -12,25 +13,30 @@ const router = createBrowserRouter([
       <>
         <NavBar />
         <MainPage />
-        
+
       </>
     ),
   },
   {
-    path: "/item-list", 
+    path: "/item-list",
     element: (
       <>
         <NavBar />
-        <ItemList /> 
+        <ItemList />
       </>
     ),
   },
+
+
 ]);
 
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
+
     </div>
   );
 }

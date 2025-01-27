@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+import { styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,16 +9,14 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import HomeIcon from '@mui/icons-material/Home';
-import '../style/navBar.css'
+import '../style/style.css'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -163,7 +161,7 @@ export default function NavBar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit"
+          color="gray"
         >
           <Badge badgeContent={0} color="error">
             <AccountCircle sx={commonIconStyle} />
@@ -176,7 +174,7 @@ export default function NavBar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit"
+          color="gray"
         >
           <Badge badgeContent={0} color="error">
             <HomeIcon />
@@ -188,7 +186,7 @@ export default function NavBar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit"
+          color="gray"
         >
           <Badge badgeContent={0} color="error">
             <WorkOutlineIcon />
@@ -200,7 +198,7 @@ export default function NavBar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit"
+          color="gray"
         >
           <Badge badgeContent={0} color="error">
             <PeopleOutlineIcon />
@@ -210,7 +208,7 @@ export default function NavBar() {
       </MenuItem>
 
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <IconButton size="large" aria-label="show 4 new mails" color="gray">
           <Badge badgeContent={4} color="error">
             <ChatBubbleOutlineIcon />
           </Badge>
@@ -221,7 +219,7 @@ export default function NavBar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit"
+          color="gray"
         >
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
@@ -287,6 +285,7 @@ export default function NavBar() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
+              color="gray"
             >
               <AccountCircle sx={commonIconStyle} />
             </IconButton>
@@ -298,6 +297,7 @@ export default function NavBar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
+              color="gray"
             >
               <AccountCircle/>
             </IconButton>

@@ -1,0 +1,26 @@
+.zColor {
+    color: green
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between
+}
+
+.editedList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
